@@ -1,13 +1,13 @@
 // Voice IDs mapped to styles — using ElevenLabs premade voices
 const VOICE_MAP = {
-  warm_elderly_man: 'YOUR_VOICE_ID_HERE',
-  warm_elderly_woman: 'YOUR_VOICE_ID_HERE',
-  middle_aged_man: 'YOUR_VOICE_ID_HERE',
-  middle_aged_woman: 'YOUR_VOICE_ID_HERE',
-  young_man: 'YOUR_VOICE_ID_HERE',
-  young_woman: 'YOUR_VOICE_ID_HERE',
-  gravelly_old_man: 'YOUR_VOICE_ID_HERE',
-  soft_old_woman: 'YOUR_VOICE_ID_HERE',
+  warm_elderly_man: 'ch0vU2DwfJVmFG2iZy89',
+  warm_elderly_woman: 'tE1KlkSzdHDpi3dDzO60',
+  middle_aged_man: 'VQWIG7jHNSEv826utbm8',
+  middle_aged_woman: 'MnUw1cSnpiLoLhpd3Hqp',
+  young_man: 'wSqOdjeNqDrHcoK0zorF',
+  young_woman: 'TbMNBJ27fH2U0VgpSNko',
+  gravelly_old_man: 'Q4oILuo4P8VeXtE6FMLI',
+  soft_old_woman: 'GpOshR6AeCDz0A9MCHKJ',
 };
 
 export async function generateVoice(text, voiceStyle) {
