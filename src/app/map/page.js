@@ -1043,20 +1043,11 @@ export default function MapPage() {
         Searching the archives
       </span>
 
-      <div style={{ display: 'flex', gap: '0.35rem' }}>
-        {[0, 1, 2].map((i) => (
-          <div
-            key={`right-${i}`}
-            style={{
-              width: '5px',
-              height: '5px',
-              borderRadius: '50%',
-              background: '#c8a96e',
-              animation: `dotWave 1.2s ease-in-out ${i * 0.2}s infinite`,
-            }}
-          />
-        ))}
-      </div>
+      <div className="messenger-typing">
+  <div className="messenger-dot" style={{ animationDelay: '0s' }} />
+  <div className="messenger-dot" style={{ animationDelay: '0.18s' }} />
+  <div className="messenger-dot" style={{ animationDelay: '0.36s' }} />
+</div>
     </div>
 
     <div
