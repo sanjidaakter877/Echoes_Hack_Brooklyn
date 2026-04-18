@@ -5,7 +5,7 @@ const steps = [
   {
     num: '001',
     title: 'Tap any location',
-    desc: 'Open the Brooklyn map. Tap any building, block, or corner. Every street has witnessed something.',
+    desc: 'Open the New York City map. Tap any building, block, or corner. Every street has witnessed something.',
   },
   {
     num: '002',
@@ -60,6 +60,7 @@ export default function HowItWorks() {
           {steps.map((s) => (
             <div
               key={s.num}
+              className="reveal-child"
               style={{
                 background: 'var(--bg)',
                 padding: '2rem',

@@ -29,9 +29,20 @@ export default function Footer() {
           fontSize: '0.6rem',
           color: 'var(--text3)',
           letterSpacing: '0.06em',
+          textAlign: 'right',
+          lineHeight: 1.8,
         }}
       >
-        Hack Brooklyn 2026 · Built in 48 hours
+        <div>Hack Brooklyn 2026 · Built in 48 hours</div>
+        <div style={{ color: 'var(--text3)', marginTop: '0.2rem' }}>
+          Made by{' '}
+          {['Don', 'Husnain', 'Tahreem', 'Sanjida'].map((name, i, arr) => (
+            <span key={name}>
+              <span style={{ color: 'var(--gold2)' }}>{name}</span>
+              {i < arr.length - 1 && <span style={{ color: 'var(--text3)' }}>, </span>}
+            </span>
+          ))}
+        </div>
       </div>
     </footer>
   );

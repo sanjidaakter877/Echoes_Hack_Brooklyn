@@ -19,8 +19,14 @@ export async function researchLocation(address, lat, lng) {
       ),
     );
 
-    const combined = results
-      .flatMap((r) => r.results)
+    const allResults = results.flatMap((r) => r.results);
+
+    const sources = allResults
+      .slice(0, 4)
+      .map((r) => ({ title: r.title, url: r.url, snippet: r.content?.slice(0, 120) }))
+      .filter((s) => s.title && s.url);
+
+    const combined = allResults
       .map((r) => `${r.title}: ${r.content}`)
       .join('\n\n');
 
@@ -29,10 +35,9 @@ export async function researchLocation(address, lat, lng) {
       .filter(Boolean)
       .join(' ');
 
-    return { research: combined, summary: answer };
+    return { research: combined, summary: answer, sources };
   } catch (err) {
     console.error('Tavily error:', err);
-    // Fallback to neighborhood-level research
     const neighborhood = extractNeighborhood(address);
     const fallback = await client.search(
       `${neighborhood} Brooklyn history 1900s 1970s 1980s stories`,
@@ -43,6 +48,10 @@ export async function researchLocation(address, lat, lng) {
         .map((r) => `${r.title}: ${r.content}`)
         .join('\n\n'),
       summary: fallback.answer || '',
+      sources: fallback.results
+        .slice(0, 4)
+        .map((r) => ({ title: r.title, url: r.url, snippet: r.content?.slice(0, 120) }))
+        .filter((s) => s.title && s.url),
     };
   }
 }
