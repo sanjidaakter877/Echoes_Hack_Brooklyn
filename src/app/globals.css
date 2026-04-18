@@ -315,3 +315,31 @@ html {
     transform: scale(0.8);
   }
 }
+.messenger-typing {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.messenger-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e8c98e, #c8a96e 60%, #7a6438);
+  opacity: 0.4;
+  transform: translateY(0);
+  animation: messengerBounce 1.15s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(200, 169, 110, 0.4);
+}
+
+@keyframes messengerBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-7px);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(200, 169, 110, 0.8);
+  }
+}
