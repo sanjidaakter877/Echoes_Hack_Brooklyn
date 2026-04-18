@@ -232,7 +232,7 @@ export default function Team() {
                   style={{
                     fontFamily: "'DM Mono',monospace",
                     fontSize: '0.6rem',
-                    color: 'rgba(255,255,255,0.4)',
+                    color: 'rgba(255,255,255,0.8)',
                     letterSpacing: '0.04em',
                   }}
                 >
